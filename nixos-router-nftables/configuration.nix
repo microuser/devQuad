@@ -215,11 +215,11 @@ in
       subnet ${LanSubnet24}.0 netmask ${LanNetmask} {
         option routers = ${LanStaticIp};
         option domain-name-servers ${LanDns};
-        option subnet-mask ${LanNetmask}
-        interface ${LanDevice}
-        range ${LanSubnet24}.10 ${LanSubnet24}.254
+        option subnet-mask ${LanNetmask};
+        interface ${LanDevice};
+        range ${LanSubnet24}.10 ${LanSubnet24}.254;
       }
     '';
-  }
+  };
 
 }
