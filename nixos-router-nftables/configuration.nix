@@ -9,6 +9,10 @@ let
   BridgeDevice1 = "enp0s8";
   BridgeDevice2 = "enp0s9";
   LanStaticIp = "192.168.25.1";
+  LanSubnet24 = "192.168.25";
+  LanNetmask = "255.255.255.0";
+  LanDns = "8.8.8.8";
+
 in
 {
   imports =
@@ -204,6 +208,18 @@ in
   };
 
 
-
+  services.dhcpd4 = {
+    enable = true;
+    interfaces = [ "${LanDevice}" ];
+    extraConfig = ''
+      subnet ${LanSubnet24}.0 netmask ${LanNetmask} {
+        option routers = ${LanStaticIp};
+        option domain-name-servers ${LanDns};
+        option subnet-mask ${LanNetmask}
+        interface ${LanDevice}
+        range ${LanSubnet24}.10 ${LanSubnet24}.254
+      }
+    '';
+  }
 
 }
