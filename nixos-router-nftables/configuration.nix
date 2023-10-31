@@ -4,8 +4,8 @@
 
 { config, pkgs, ... }:
 let
-  WanDevice = "enp0s10";
-  LanDevice = "enp0s3";
+  WanDevice = "enp0s3";
+  LanDevice = "enp0s10";
   BridgeDevice1 = "enp0s8";
   BridgeDevice2 = "enp0s9";
   LanStaticIp = "192.168.25.1";
