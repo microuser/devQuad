@@ -27,3 +27,6 @@ verify secure boot keys,
 re-enable secureboot
 
 boot with EFI logo
+
+take note of networking interface names.
+
