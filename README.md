@@ -21,4 +21,9 @@ Turn EFI on off or on
 Do the install, partion using the AUTO disk whole if possible. Otherwise, EFI boot for a 100meg partiton fat32 with only boot. sometimes just first partition is enough, depending on crazy size or SSD newness.
 
 
+install
 
+verify secure boot keys,
+re-enable secureboot
+
+boot with EFI logo
